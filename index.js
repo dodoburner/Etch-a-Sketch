@@ -29,7 +29,7 @@ body.appendChild(grid);
 
 divArray.forEach(i => i.addEventListener('mouseenter',
  function (e) {
-    i.style.backgroundColor= 'blue';
+    i.style.backgroundColor= random_rgba();
 }
 ));
 
@@ -43,6 +43,12 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
+
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
 
 button.addEventListener('click', function(e) {
     removeAllChildNodes(grid);
@@ -68,7 +74,7 @@ button.addEventListener('click', function(e) {
 
     divArray.forEach(i => i.addEventListener('mouseenter',
  function (e) {
-    i.style.backgroundColor= 'blue';
+    i.style.backgroundColor= random_rgba();
 }
 ));
 })
